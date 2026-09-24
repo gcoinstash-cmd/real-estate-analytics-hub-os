@@ -1,0 +1,33 @@
+# Production-grade Netlify Deployment & Architecture Configuration
+# Optimized for sub-millisecond Jamstack delivery and highest technical SEO performance.
+
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# 1. Global Default Headers for Security and Asset Governance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' https: 'unsafe-inline' 'unsafe-eval' data:; img-src 'self' https: data: blob:;"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+
+# 2. Aggressive Caching for Static Assets at the CDN Edge (Immutable Scripts & Styles)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

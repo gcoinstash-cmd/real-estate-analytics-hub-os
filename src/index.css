@@ -1,0 +1,20 @@
+@import url('https://cdn.jsdelivr.net/npm/geist-font@1.1.0/dist/static/geist-sans.min.css');
+@import url('https://cdn.jsdelivr.net/npm/geist-font@1.1.0/dist/static/geist-mono.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Geist Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Geist Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@utility font-mono {
+  font-variant-numeric: tabular-nums;
+}
+
+@media print {
+  .print\:hidden {
+    display: none !important;
+  }
+}
