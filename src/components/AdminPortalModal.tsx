@@ -64,11 +64,11 @@ export default function AdminPortalModal({ isOpen, onClose }: AdminPortalModalPr
               <Building className="h-5 w-5 text-emerald-400" />
             </div>
             <div>
-              <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Real Estate Analytics Hub OS</p>
+              <p className="text-xs font-semibold tracking-wider font-mono text-zinc-300 uppercase tracking-widest">Real Estate Analytics Hub OS</p>
               <h2 className="text-sm font-bold text-white uppercase tracking-wider">Credit Risk & Underwriting Committee Gate</h2>
             </div>
           </div>
-          <button onClick={onClose} className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-800 text-zinc-500 hover:text-white transition-all cursor-pointer">
+          <button onClick={onClose} className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-800 text-zinc-300 hover:text-white transition-all cursor-pointer">
             <X className="h-4 w-4" />
           </button>
         </div>
@@ -83,7 +83,7 @@ export default function AdminPortalModal({ isOpen, onClose }: AdminPortalModalPr
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-white uppercase tracking-wider mt-4">Investment Committee Access</h3>
-                <p className="text-xs text-zinc-400 font-mono max-w-xs mx-auto">Commercial Debt & Equity Underwriting Gate. Enter committee passkey or use 1-click bypass demo.</p>
+                <p className="text-base text-zinc-200 leading-relaxed font-mono max-w-xs mx-auto">Commercial Debt & Equity Underwriting Gate. Enter committee passkey or use 1-click bypass demo.</p>
               </div>
 
               <div className="w-full max-w-sm space-y-3">
@@ -96,7 +96,7 @@ export default function AdminPortalModal({ isOpen, onClose }: AdminPortalModalPr
                   className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-sm text-white font-mono focus:outline-none focus:border-emerald-500/50 placeholder:text-zinc-700"
                 />
                 {authError && <p className="text-xs text-red-400 font-mono">{authError}</p>}
-                <button onClick={handleAuth} className="w-full rounded-lg bg-emerald-500 py-3 text-sm font-bold uppercase tracking-wider text-black hover:bg-emerald-400 transition-all cursor-pointer">
+                <button onClick={handleAuth} className="w-full rounded-lg bg-emerald-500 py-3 text-base font-bold min-h-[44px] uppercase tracking-wider text-black hover:bg-emerald-400 transition-all cursor-pointer">
                   Unlock Underwriting Suite
                 </button>
                 <button
@@ -120,7 +120,7 @@ export default function AdminPortalModal({ isOpen, onClose }: AdminPortalModalPr
                     key={id}
                     onClick={() => setActiveTab(id)}
                     className={`flex-1 flex items-center justify-center gap-1.5 rounded-md py-2 text-xs font-mono uppercase tracking-wider transition-all cursor-pointer ${
-                      activeTab === id ? 'bg-emerald-500 text-black font-bold' : 'text-zinc-500 hover:text-zinc-300'
+                      activeTab === id ? 'bg-emerald-500 text-black font-bold' : 'text-zinc-300 hover:text-zinc-300'
                     }`}
                   >
                     <Icon className="h-3 w-3" />
@@ -136,7 +136,7 @@ export default function AdminPortalModal({ isOpen, onClose }: AdminPortalModalPr
                       <div key={label} className="rounded-xl border border-zinc-800 bg-zinc-950 p-4 space-y-2">
                         <Icon className={`h-4 w-4 ${color}`} />
                         <p className={`text-xl font-bold font-mono ${color}`}>{value}</p>
-                        <p className="text-[10px] text-zinc-500 uppercase tracking-wider">{label}</p>
+                        <p className="text-xs font-semibold tracking-wider text-zinc-300 uppercase tracking-wider">{label}</p>
                       </div>
                     ))}
                   </div>
@@ -150,7 +150,7 @@ export default function AdminPortalModal({ isOpen, onClose }: AdminPortalModalPr
                             <span className="text-xs font-bold text-white">{d.asset}</span>
                             <span className="text-[9px] font-mono text-emerald-400 bg-emerald-500/10 px-1 py-0.5 rounded">DSCR {d.dscr}</span>
                           </div>
-                          <p className="text-[10px] text-zinc-400 font-mono mt-0.5">{d.sponsor} · Exit Cap {d.capRate}</p>
+                          <p className="text-xs font-semibold tracking-wider text-zinc-400 font-mono mt-0.5">{d.sponsor} · Exit Cap {d.capRate}</p>
                         </div>
                         <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded border uppercase ${statusColors[d.status]}`}>{d.status}</span>
                       </div>
@@ -165,11 +165,11 @@ export default function AdminPortalModal({ isOpen, onClose }: AdminPortalModalPr
                     <div key={d.id} className="rounded-xl border border-zinc-800 bg-zinc-950 p-4 flex items-center justify-between gap-3">
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
-                          <span className="text-[10px] font-mono text-zinc-500">{d.id}</span>
+                          <span className="text-xs font-semibold tracking-wider font-mono text-zinc-300">{d.id}</span>
                           <span className={`text-[9px] font-mono px-1.5 py-0.5 rounded border uppercase ${statusColors[d.status]}`}>{d.status}</span>
                         </div>
                         <p className="text-sm font-bold text-white">{d.asset}</p>
-                        <p className="text-xs text-zinc-400 font-mono">{d.sponsor} · DSCR: {d.dscr} · Cap Rate: {d.capRate}</p>
+                        <p className="text-base text-zinc-200 leading-relaxed font-mono">{d.sponsor} · DSCR: {d.dscr} · Cap Rate: {d.capRate}</p>
                       </div>
                     </div>
                   ))}
@@ -198,7 +198,7 @@ export default function AdminPortalModal({ isOpen, onClose }: AdminPortalModalPr
               {activeTab === 'settings' && (
                 <div className="space-y-4">
                   <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-5 space-y-3">
-                    <h4 className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Institutional Credentials</h4>
+                    <h4 className="text-xs font-mono text-zinc-300 uppercase tracking-widest">Institutional Credentials</h4>
                     {[
                       { label: 'Platform Name', value: 'Real Estate Analytics Hub' },
                       { label: 'Committee Passkey', value: 'analytics2026' },
@@ -206,7 +206,7 @@ export default function AdminPortalModal({ isOpen, onClose }: AdminPortalModalPr
                       { label: 'Engine', value: 'CommercialFinanceEngine (DSCR + CapRate + SaaS)' },
                     ].map(({ label, value }) => (
                       <div key={label} className="flex justify-between items-center py-2 border-b border-zinc-800/60 last:border-0">
-                        <span className="text-xs text-zinc-500 font-mono uppercase">{label}</span>
+                        <span className="text-xs text-zinc-300 font-mono uppercase">{label}</span>
                         <span className="text-xs text-zinc-200 font-mono">{value}</span>
                       </div>
                     ))}

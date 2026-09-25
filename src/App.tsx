@@ -1038,8 +1038,8 @@ export default function App() {
   const renderDiagnosticLine = (line: any, idx: number) => {
     const lineNum = idx + 1;
     return (
-      <div key={idx} className="flex hover:bg-stone-900/60 py-0.5 px-4 font-mono text-[11px] leading-relaxed select-text font-light">
-        <span className="w-10 text-stone-700 hover:text-stone-500 text-right pr-3 select-none border-r border-[#1e1e24] mr-4 font-mono text-[10px] tracking-tight">
+      <div key={idx} className="flex hover:bg-stone-900/60 py-0.5 px-4 font-mono text-xs font-semibold leading-relaxed select-text font-light">
+        <span className="w-10 text-stone-700 hover:text-stone-500 text-right pr-3 select-none border-r border-[#1e1e24] mr-4 font-mono text-xs font-semibold tracking-wider tracking-tight">
           {lineNum}
         </span>
         <span className="flex-1 whitespace-pre font-mono tracking-wide text-stone-300">
@@ -1347,7 +1347,7 @@ export default function App() {
               <h4 className="text-xs font-mono font-bold text-stone-400 uppercase tracking-widest">
                 Stress-Testing &amp; Risk Simulator
               </h4>
-              <p className="text-[10px] text-stone-600 font-mono mt-0.5">
+              <p className="text-xs font-semibold tracking-wider text-stone-600 font-mono mt-0.5">
                 Inject random macroeconomic winds to study deal persistence under negative scenarios.
               </p>
             </div>
@@ -1355,7 +1355,7 @@ export default function App() {
           <button
             id="toggle-challenge-mode-btn"
             onClick={() => setChallengeActive(!challengeActive)}
-            className={`py-2 px-5 font-mono text-[10px] uppercase font-bold tracking-widest border rounded-full transition-all duration-300 select-none cursor-pointer active:scale-95 hover:scale-[1.02] ${
+            className={`py-2 px-5 font-mono text-xs font-semibold tracking-wider uppercase font-bold tracking-widest border rounded-full transition-all duration-300 select-none cursor-pointer active:scale-95 hover:scale-[1.02] ${
               challengeActive 
                 ? 'bg-emerald-950/20 text-emerald-400 border-emerald-500/80 shadow-[0_0_16px_rgba(16,185,129,0.25)] animate-pulse' 
                 : 'bg-transparent text-stone-600 border-stone-900/60 hover:text-stone-400 hover:border-stone-800/80 hover:bg-white/[0.01]'
@@ -1376,7 +1376,7 @@ export default function App() {
                   <span className="text-[9px] font-mono font-bold tracking-wider text-amber-400 uppercase bg-amber-500/10 px-2.5 py-0.5 rounded border border-amber-500/10">
                     MACRO EVENT ACTIVE
                   </span>
-                  <span className="text-[10px] font-mono text-stone-500">/</span>
+                  <span className="text-xs font-semibold tracking-wider font-mono text-stone-500">/</span>
                   <button
                     id="reroll-challenge-btn"
                     onClick={handleRerollHeadwind}
@@ -1390,7 +1390,7 @@ export default function App() {
                   {activeChallenge.name}
                 </h3>
                 
-                <p className="text-[11px] text-stone-400 font-serif leading-relaxed italic">
+                <p className="text-xs font-semibold text-stone-400 font-serif leading-relaxed italic">
                   {activeChallenge.description}
                 </p>
               </div>
@@ -1403,12 +1403,12 @@ export default function App() {
                 
                 <div className="font-mono space-y-1.5">
                   <div className="text-xs text-stone-300 flex justify-between items-center bg-stone-950/30 p-1.5 rounded">
-                    <span className="text-[10px]">Objective:</span>
+                    <span className="text-xs font-semibold tracking-wider">Objective:</span>
                     <span className="font-bold text-[#F9F6F0]">{activeChallenge.goalText}</span>
                   </div>
                   
                   <div className="text-xs text-stone-300 flex justify-between items-center bg-stone-950/30 p-1.5 rounded">
-                    <span className="text-[10px]">Current Value:</span>
+                    <span className="text-xs font-semibold tracking-wider">Current Value:</span>
                     <span className={`font-bold ${challengeSuccess ? 'text-emerald-400' : 'text-rose-400 animate-pulse'}`}>
                       {(() => {
                         if (activeTab === 'debt-coverage') {
@@ -1472,12 +1472,12 @@ export default function App() {
                       </span>
                       <div>
                         <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest block">COVENANT COMPLIANT</span>
-                        <p className="text-[10px] text-stone-400 font-mono mt-0.5 animate-pulse">
+                        <p className="text-xs font-semibold tracking-wider text-stone-400 font-mono mt-0.5 animate-pulse">
                           Excellent. Capital structures and revenue rates survive under stress tests.
                         </p>
                       </div>
                     </div>
-                    <span className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest font-bold">AURA &amp; GRID SYNC_OK</span>
+                    <span className="text-xs font-semibold tracking-wider font-mono text-emerald-500 uppercase tracking-widest font-bold">AURA &amp; GRID SYNC_OK</span>
                   </div>
                 </div>
               ) : (
@@ -1488,7 +1488,7 @@ export default function App() {
                     </span>
                     <div>
                       <span className="text-xs font-mono font-bold text-rose-400 uppercase tracking-widest block">COVENANT VIOLATION DETECTED</span>
-                      <p className="text-[10px] text-stone-400 font-mono mt-0.5 leading-relaxed">
+                      <p className="text-xs font-semibold tracking-wider text-stone-400 font-mono mt-0.5 leading-relaxed">
                         Under active market contraction, this deal defaults or loses cash efficiency. Adjust input multipliers above to stabilize.
                       </p>
                     </div>
@@ -1500,7 +1500,7 @@ export default function App() {
             {/* Mastery Tracker */}
             <div className="mt-5 pt-5 border-t border-stone-900/60 flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                <span className="text-[10px] font-mono tracking-[0.15em] text-stone-500 uppercase font-bold select-none">
+                <span className="text-xs font-semibold tracking-wider font-mono tracking-[0.15em] text-stone-500 uppercase font-bold select-none">
                   STRESS MASTERY INDEX:
                 </span>
                 <span className="text-xs font-mono font-bold text-emerald-400">
@@ -1601,7 +1601,7 @@ export default function App() {
 
     return (
       <div className="relative font-sans">
-        <div className="flex justify-between items-center text-[10px] text-stone-400 font-mono mb-2">
+        <div className="flex justify-between items-center text-xs font-semibold tracking-wider text-stone-400 font-mono mb-2">
           <span>COMPOUNDING CURVE OVER 10 YEARS</span>
           <span className="text-[#F9F6F0] font-bold">Exit Valuation: {formatCur(projections[10].valuation)}</span>
         </div>
@@ -1693,7 +1693,7 @@ export default function App() {
           {/* Luxury Floating HUD (Warm Ivory Micro-card in JetBrains Mono) */}
           {hoveredPoint && (
             <div 
-              className="absolute z-30 bg-[#F9F6F0] text-[#121212] px-3.5 py-2.5 rounded-lg shadow-2xl border border-stone-200 text-[10px] font-mono pointer-events-none -translate-x-1/2 -translate-y-full mb-3 transition-transform duration-100 ease-out"
+              className="absolute z-30 bg-[#F9F6F0] text-[#121212] px-3.5 py-2.5 rounded-lg shadow-2xl border border-stone-200 text-xs font-semibold tracking-wider font-mono pointer-events-none -translate-x-1/2 -translate-y-full mb-3 transition-transform duration-100 ease-out"
               style={{ 
                 left: `${(hoveredPoint.x / width) * 100}%`, 
                 top: `${(Math.min(hoveredPoint.valY, hoveredPoint.noiY) / height) * 100}%` 
@@ -1740,7 +1740,7 @@ export default function App() {
             </p>
             
             {/* SLEEK HORIZONTAL METADATA ROW */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-3 border-t border-stone-900/60 text-[10px] font-mono text-stone-500 select-none">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-3 border-t border-stone-900/60 text-xs font-semibold tracking-wider font-mono text-stone-500 select-none">
               <div className="flex items-center gap-2">
                 <span className="uppercase text-stone-600 font-bold tracking-widest">Region:</span>
                 <select
@@ -1754,7 +1754,7 @@ export default function App() {
                       setDscrVacancyRate(hub.defaultVacancyRate);
                     }
                   }}
-                  className="bg-transparent text-stone-300 font-medium py-0.5 border-b border-stone-800 focus:outline-none focus:border-stone-550 cursor-pointer text-[10px] font-mono"
+                  className="bg-transparent text-stone-300 font-medium py-0.5 border-b border-stone-800 focus:outline-none focus:border-stone-550 cursor-pointer text-xs font-semibold tracking-wider font-mono"
                 >
                   {METROPOLITAN_HUBS.map((hub) => (
                     <option key={hub.slug} value={hub.slug} className="bg-[#121212] text-stone-300">
@@ -1779,7 +1779,7 @@ export default function App() {
 
           <div className="flex flex-col gap-2 items-stretch md:items-end w-full md:w-auto">
             {/* SIMULATION CONTROLLER PRESETS */}
-            <div className="flex flex-wrap items-center gap-3 py-1.5 w-full justify-start md:justify-end text-[10px] font-sans select-none">
+            <div className="flex flex-wrap items-center gap-3 py-1.5 w-full justify-start md:justify-end text-xs font-semibold tracking-wider font-sans select-none">
               <span className="text-[9px] font-mono text-stone-500 uppercase tracking-widest font-bold">MODEL SELECTION</span>
               <button 
                 id="preset-cre-btn"
@@ -1807,7 +1807,7 @@ export default function App() {
             </div>
 
             {/* ASSET PROFILE PRESETS */}
-            <div className="flex flex-wrap items-center gap-3 py-1.5 w-full justify-start md:justify-end text-[10px] font-sans select-none">
+            <div className="flex flex-wrap items-center gap-3 py-1.5 w-full justify-start md:justify-end text-xs font-semibold tracking-wider font-sans select-none">
               <span className="text-[9px] font-mono text-stone-500 uppercase tracking-widest font-bold">ASSET CATEGORY</span>
               <button 
                 id="asset-multifamily-btn"
@@ -1847,7 +1847,7 @@ export default function App() {
             </div>
 
             {/* UNDO / REDO HISTORY CONTROL */}
-            <div className="flex flex-wrap items-center gap-3 py-1.5 w-full justify-start md:justify-end text-[10px] font-mono select-none">
+            <div className="flex flex-wrap items-center gap-3 py-1.5 w-full justify-start md:justify-end text-xs font-semibold tracking-wider font-mono select-none">
               <span className="text-[9px] text-stone-500 uppercase tracking-widest font-bold">HISTORY</span>
               <div className="flex items-center gap-2 bg-stone-950 px-2 py-1 rounded-lg border border-stone-900">
                 <button
@@ -2065,7 +2065,7 @@ export default function App() {
                       type="button"
                       id="stage-nav-revenue"
                       onClick={() => setDealStage('revenue')}
-                      className={`py-2 px-1 text-center font-mono rounded-lg transition-all text-[10px] uppercase font-bold tracking-wider cursor-pointer ${
+                      className={`py-2 px-1 text-center font-mono rounded-lg transition-all text-xs font-semibold tracking-wider uppercase font-bold tracking-wider cursor-pointer ${
                         dealStage === 'revenue'
                           ? 'bg-amber-500 text-stone-950 font-extrabold shadow-sm'
                           : 'text-stone-400 hover:text-stone-200 hover:bg-stone-900/30'
@@ -2077,7 +2077,7 @@ export default function App() {
                       type="button"
                       id="stage-nav-operating"
                       onClick={() => setDealStage('operating-costs')}
-                      className={`py-2 px-1 text-center font-mono rounded-lg transition-all text-[10px] uppercase font-bold tracking-wider cursor-pointer ${
+                      className={`py-2 px-1 text-center font-mono rounded-lg transition-all text-xs font-semibold tracking-wider uppercase font-bold tracking-wider cursor-pointer ${
                         dealStage === 'operating-costs'
                           ? 'bg-amber-500 text-stone-950 font-extrabold shadow-sm'
                           : 'text-stone-400 hover:text-stone-200 hover:bg-stone-900/30'
@@ -2089,7 +2089,7 @@ export default function App() {
                       type="button"
                       id="stage-nav-debt"
                       onClick={() => setDealStage('debt-equity')}
-                      className={`py-2 px-1 text-center font-mono rounded-lg transition-all text-[10px] uppercase font-bold tracking-wider cursor-pointer ${
+                      className={`py-2 px-1 text-center font-mono rounded-lg transition-all text-xs font-semibold tracking-wider uppercase font-bold tracking-wider cursor-pointer ${
                         dealStage === 'debt-equity'
                           ? 'bg-amber-500 text-stone-950 font-extrabold shadow-sm'
                           : 'text-stone-400 hover:text-stone-200 hover:bg-stone-900/30'
@@ -2114,7 +2114,7 @@ export default function App() {
                             /* Direct NOI fields */
                             <div className="group/field">
                               <div className="flex justify-between items-center mb-1">
-                                <label className="text-xs font-sans font-medium text-stone-400/70 tracking-wide">Direct Net Operating Income (NOI)</label>
+                                <label className="text-sm font-semibold font-sans font-medium text-stone-400/70 tracking-wide">Direct Net Operating Income (NOI)</label>
                                 <span className="text-xs font-mono text-[#F9F6F0] font-bold">{formatCur(dscrDirectNoi)}</span>
                               </div>
                               <input
@@ -2143,7 +2143,7 @@ export default function App() {
                               {/* Gross rental income */}
                               <div className="group/field">
                                 <div className="flex justify-between items-center mb-1">
-                                  <label className="text-xs font-sans font-light text-stone-400/80 tracking-wide">Gross Rental Income</label>
+                                  <label className="text-sm font-semibold font-sans font-light text-stone-400/80 tracking-wide">Gross Rental Income</label>
                                   <span className="text-xs font-mono text-[#F9F6F0] font-semibold">{formatCur(dscrGrossRevenue)}</span>
                                 </div>
                                 <input
@@ -2170,7 +2170,7 @@ export default function App() {
                               {/* Vacancy Rate */}
                               <div className="group/field">
                                 <div className="flex justify-between items-center mb-1">
-                                  <label className="text-xs font-sans font-light text-stone-400/80 tracking-wide">Vacancy Rate</label>
+                                  <label className="text-sm font-semibold font-sans font-light text-stone-400/80 tracking-wide">Vacancy Rate</label>
                                   <span className="text-xs font-mono text-amber-500 font-semibold">{formatPct(dscrVacancyRate)}</span>
                                 </div>
                                 <input
@@ -2194,7 +2194,7 @@ export default function App() {
                                   />
                                 </div>
                                 {dscrVacancyRate > 15 && (
-                                  <div id="vacancy-precision-warning" className="mt-1.5 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] p-2 rounded-lg font-mono flex items-start gap-1.5 leading-relaxed">
+                                  <div id="vacancy-precision-warning" className="mt-1.5 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold tracking-wider p-2 rounded-lg font-mono flex items-start gap-1.5 leading-relaxed">
                                     <ShieldAlert size={14} className="shrink-0 mt-0.5 text-amber-500 animate-pulse" />
                                     <span>
                                       <strong>Precision Warning:</strong> Vacancy above 15% is higher than default market norms. This may indicate specialized assets (hotel/distress/stabilization phase).
@@ -2206,7 +2206,7 @@ export default function App() {
                               {/* Other Income */}
                               <div className="group/field sm:col-span-2">
                                 <div className="flex justify-between items-center mb-1">
-                                  <label className="text-xs font-sans font-light text-stone-400/80 tracking-wide">Other Revenues</label>
+                                  <label className="text-sm font-semibold font-sans font-light text-stone-400/80 tracking-wide">Other Revenues</label>
                                   <span className="text-xs font-mono text-[#F9F6F0] font-semibold">{formatCur(dscrOtherIncome)}</span>
                                 </div>
                                 <input
@@ -2236,7 +2236,7 @@ export default function App() {
                             <button
                               type="button"
                               onClick={() => setDealStage('operating-costs')}
-                              className="px-4 py-1.5 bg-stone-905 hover:bg-stone-900 border border-stone-800 text-amber-500 hover:text-amber-400 font-mono text-[10px] uppercase font-bold tracking-wider rounded-lg transition-all cursor-pointer flex items-center gap-1 active:scale-95"
+                              className="px-4 py-1.5 bg-stone-905 hover:bg-stone-900 border border-stone-800 text-amber-500 hover:text-amber-400 font-mono text-xs font-semibold tracking-wider uppercase font-bold tracking-wider rounded-lg transition-all cursor-pointer flex items-center gap-1 active:scale-95"
                             >
                               NEXT: COSTS ➜
                             </button>
@@ -2248,7 +2248,7 @@ export default function App() {
                         <div className="space-y-6 animate-fade-in">
                           {dscrUseNoiDirect ? (
                             <div className="p-4 rounded-xl border border-stone-900 bg-[#161414]/30 space-y-2">
-                              <span className="text-[10px] font-mono text-amber-500 uppercase tracking-widest font-bold">Direct NOI Override Active</span>
+                              <span className="text-xs font-semibold tracking-wider font-mono text-amber-500 uppercase tracking-widest font-bold">Direct NOI Override Active</span>
                               <p className="text-xs font-serif text-stone-400 leading-relaxed italic">
                                 Operating costs are built directly into your Direct Net Operating Income (NOI) override in Stage 1. Switch back to "Breakdown Mode" in the header to declare detailed separate expenses.
                               </p>
@@ -2257,7 +2257,7 @@ export default function App() {
                             /* Operating Expenses */
                             <div className="group/field">
                               <div className="flex justify-between items-center mb-1">
-                                <label className="text-xs font-sans font-light text-stone-400/80 tracking-wide">Operating Expenses</label>
+                                <label className="text-sm font-semibold font-sans font-light text-stone-400/80 tracking-wide">Operating Expenses</label>
                                 <span className="text-xs font-mono text-rose-400 font-semibold">{formatCur(dscrOperatingExpenses)}</span>
                               </div>
                               <input
@@ -2286,14 +2286,14 @@ export default function App() {
                             <button
                               type="button"
                               onClick={() => setDealStage('revenue')}
-                              className="px-3 py-1.5 bg-transparent text-stone-500 hover:text-stone-300 font-mono text-[10px] uppercase font-bold tracking-wider rounded-lg transition-all cursor-pointer active:scale-95"
+                              className="px-3 py-1.5 bg-transparent text-stone-500 hover:text-stone-300 font-mono text-xs font-semibold tracking-wider uppercase font-bold tracking-wider rounded-lg transition-all cursor-pointer active:scale-95"
                             >
                               ⮌ REVENUE
                             </button>
                             <button
                               type="button"
                               onClick={() => setDealStage('debt-equity')}
-                              className="px-4 py-1.5 bg-stone-905 hover:bg-stone-900 border border-stone-800 text-amber-500 hover:text-amber-400 font-mono text-[10px] uppercase font-bold tracking-wider rounded-lg transition-all cursor-pointer flex items-center gap-1 active:scale-95"
+                              className="px-4 py-1.5 bg-stone-905 hover:bg-stone-900 border border-stone-800 text-amber-500 hover:text-amber-400 font-mono text-xs font-semibold tracking-wider uppercase font-bold tracking-wider rounded-lg transition-all cursor-pointer flex items-center gap-1 active:scale-95"
                             >
                               NEXT: DEBT/EQUITY ➜
                             </button>
@@ -2306,7 +2306,7 @@ export default function App() {
                           {/* Debt Service */}
                           <div className="group/field">
                             <div className="flex justify-between items-center mb-1">
-                              <label className="text-xs font-sans font-light text-stone-400/80 tracking-wide">Annual Debt Obligations</label>
+                              <label className="text-sm font-semibold font-sans font-light text-stone-400/80 tracking-wide">Annual Debt Obligations</label>
                               <span className="text-xs font-mono text-[#F9F6F0] font-semibold">{formatCur(dscrAnnualDebtService)}</span>
                             </div>
                             <input
@@ -2338,7 +2338,7 @@ export default function App() {
                               </button>
                             </div>
                             {dscrCalc.success && dscrCalc.data && dscrCalc.data.dscr < 1.0 && !dscrCalc.data.isDebtFree && (
-                              <div id="dscr-precision-warning" className="mt-2.5 bg-rose-500/10 border border-rose-500/20 text-rose-500 text-[10px] p-2 rounded-lg font-mono flex items-start gap-1.5 leading-relaxed">
+                              <div id="dscr-precision-warning" className="mt-2.5 bg-rose-500/10 border border-rose-500/20 text-rose-500 text-xs font-semibold tracking-wider p-2 rounded-lg font-mono flex items-start gap-1.5 leading-relaxed">
                                 <ShieldAlert size={14} className="shrink-0 mt-0.5 text-rose-500 animate-pulse" />
                                 <span>
                                   <strong>Precision Warning:</strong> DSCR is below 1.00x ({dscrCalc.data.dscr.toFixed(2)}x). Net Operating Cash flow is insufficient to cover debt service obligations. This typically breaches bank covenants.
@@ -2350,7 +2350,7 @@ export default function App() {
                           {/* Lender Proposed Loan Amount */}
                           <div className="group/field">
                             <div className="flex justify-between items-center mb-1">
-                              <label className="text-xs font-sans font-light text-stone-400/80 tracking-wide">Loan Amount</label>
+                              <label className="text-sm font-semibold font-sans font-light text-stone-400/80 tracking-wide">Loan Amount</label>
                               <span className="text-xs font-mono text-[#F9F6F0] font-semibold">{formatCur(dscrLoanAmount)}</span>
                             </div>
                             <input
@@ -2377,7 +2377,7 @@ export default function App() {
                           {/* Initial Cash Equity for Cash-on-Cash Return */}
                           <div className="group/field">
                             <div className="flex justify-between items-center mb-1">
-                              <label className="text-xs font-sans font-light text-stone-400/80 tracking-wide">Cash Invested</label>
+                              <label className="text-sm font-semibold font-sans font-light text-stone-400/80 tracking-wide">Cash Invested</label>
                               <span className="text-xs font-mono text-[#F9F6F0] font-semibold">{formatCur(dscrInitialCashEquity)}</span>
                             </div>
                             <input
@@ -2405,7 +2405,7 @@ export default function App() {
                             <button
                               type="button"
                               onClick={() => setDealStage('operating-costs')}
-                              className="px-3 py-1.5 bg-transparent text-stone-500 hover:text-stone-300 font-mono text-[10px] uppercase font-bold tracking-wider rounded-lg transition-all cursor-pointer active:scale-95"
+                              className="px-3 py-1.5 bg-transparent text-stone-500 hover:text-stone-300 font-mono text-xs font-semibold tracking-wider uppercase font-bold tracking-wider rounded-lg transition-all cursor-pointer active:scale-95"
                             >
                               ⮌ COSTS
                             </button>
@@ -2442,14 +2442,14 @@ export default function App() {
                             <div className="flex justify-between items-start">
                               <div>
                                 <div className="flex items-center gap-2 select-none flex-wrap">
-                                  <span className="text-[10px] font-mono tracking-widest text-stone-500 uppercase">Deal Health</span>
+                                  <span className="text-xs font-semibold tracking-wider font-mono tracking-widest text-stone-500 uppercase">Deal Health</span>
                                   {(data.isDebtFree || data.dscr >= 1.25) && !(challengeActive && activeTab === 'debt-coverage' && !challengeSuccess) && (
                                     <span id="dscr-guard-badge" className="text-xs font-serif italic text-[#10B981] font-light ml-2">
                                       ✓ Strong Coverage
                                     </span>
                                   )}
                                   {challengeActive && activeTab === 'debt-coverage' && !challengeSuccess && (
-                                    <span className="text-[10px] font-mono tracking-wider text-rose-600 bg-rose-100/60 px-2.5 py-0.5 rounded border border-rose-200 font-bold ml-2 uppercase animate-pulse">
+                                    <span className="text-xs font-semibold tracking-wider font-mono tracking-wider text-rose-600 bg-rose-100/60 px-2.5 py-0.5 rounded border border-rose-200 font-bold ml-2 uppercase animate-pulse">
                                       ⚠️ COVENANT FAILING
                                     </span>
                                   )}
@@ -2461,12 +2461,12 @@ export default function App() {
                                       (GOAL: ≥ 1.25x)
                                     </span>
                                   ) : (
-                                    <span className="text-[11px] font-mono tracking-wider text-stone-500 font-normal select-none">(Target benchmark is 1.25x or higher)</span>
+                                    <span className="text-xs font-semibold font-mono tracking-wider text-stone-500 font-normal select-none">(Target benchmark is 1.25x or higher)</span>
                                   )}
                                 </h3>
                               </div>
                               <div className="flex flex-col items-end gap-1.5 text-right select-none">
-                                <span className={`text-[10px] uppercase font-mono font-bold tracking-wider px-3 py-1.5 rounded-full ${ratingStyling.tag}`}>
+                                <span className={`text-xs font-semibold tracking-wider uppercase font-mono font-bold tracking-wider px-3 py-1.5 rounded-full ${ratingStyling.tag}`}>
                                   {data.dscrRating}
                                 </span>
                               </div>
@@ -2503,7 +2503,7 @@ export default function App() {
 
                             {/* PERSISTENT HELPER EXPLANATION */}
                             <div className="pt-1.5">
-                              <p className="text-[11px] text-[#4A4A4A] font-sans italic leading-relaxed">
+                              <p className="text-xs font-semibold text-[#4A4A4A] font-sans italic leading-relaxed">
                                 *"Measures whether your property generates enough rental cash flow to fully cover your mortgage payment."*
                               </p>
                             </div>
@@ -2512,7 +2512,7 @@ export default function App() {
                             {challengeActive && !challengeSuccess && dscrRecoveryStrategy && (
                               <div className="mt-4 pt-4 border-t border-rose-300/40 space-y-3">
                                 <div className="flex items-center justify-between">
-                                  <span className="text-[10px] font-mono font-bold tracking-wider text-rose-800 uppercase flex items-center gap-1.5 select-none font-bold">
+                                  <span className="text-xs font-semibold tracking-wider font-mono font-bold tracking-wider text-rose-800 uppercase flex items-center gap-1.5 select-none font-bold">
                                     <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
                                     Tactical Recovery Option
                                   </span>
@@ -2569,7 +2569,7 @@ export default function App() {
                           {/* RECALCULATED DEBT YIELD COMPONENT */}
                           {debtYieldCalc.success && debtYieldCalc.data !== undefined && (
                             <div className="bg-stone-950 border border-stone-850 p-5 rounded-xl space-y-3">
-                              <div className="flex justify-between items-center text-[10px] font-mono font-bold text-stone-400">
+                              <div className="flex justify-between items-center text-xs font-semibold tracking-wider font-mono font-bold text-stone-400">
                                 <div className="flex items-center gap-1.5 flex-wrap">
                                   <span>CALCULATED DEBT YIELD</span>
                                   {debtYieldCalc.data >= 10.0 && (
@@ -2582,8 +2582,8 @@ export default function App() {
                               </div>
                               <div className="flex items-baseline gap-2 flex-wrap">
                                 <span className="text-3xl font-mono text-amber-400 font-extrabold">{debtYieldCalc.data.toFixed(2)}%</span>
-                                <span className="text-[10px] font-mono text-stone-500 mr-2">NOI / Loan Amount</span>
-                                <span className="text-[11px] font-mono tracking-wider text-stone-500 font-normal ml-auto select-none">(Standard benchmark is 10.0% or higher)</span>
+                                <span className="text-xs font-semibold tracking-wider font-mono text-stone-500 mr-2">NOI / Loan Amount</span>
+                                <span className="text-xs font-semibold font-mono tracking-wider text-stone-500 font-normal ml-auto select-none">(Standard benchmark is 10.0% or higher)</span>
                               </div>
                               <p className="text-xs text-stone-400 font-serif italic">
                                 {debtYieldCalc.data >= 10.0 
@@ -2593,7 +2593,7 @@ export default function App() {
 
                               {/* PERSISTENT HELPER EXPLANATION */}
                               <div className="border-t border-stone-900 pt-2.5">
-                                <p className="text-[11px] text-stone-400 font-serif italic leading-relaxed">
+                                <p className="text-xs font-semibold text-stone-400 font-serif italic leading-relaxed">
                                   *"Shows the lender's immediate cash return if they had to foreclose and take over the property today."*
                                 </p>
                               </div>
@@ -2603,7 +2603,7 @@ export default function App() {
                           {/* CASH ON CASH YIELD COMPONENT */}
                           {dscrCashOnCashCalc.success && dscrCashOnCashCalc.data !== undefined && (
                             <div className="bg-stone-950 border border-stone-850 p-5 rounded-xl space-y-3">
-                              <div className="flex justify-between items-center text-[10px] font-mono font-bold text-stone-400">
+                              <div className="flex justify-between items-center text-xs font-semibold tracking-wider font-mono font-bold text-stone-400">
                                 <div className="flex items-center gap-1.5 flex-wrap">
                                   <span>CASH-ON-CASH (CoC) RETURN</span>
                                   {dscrCashOnCashCalc.data >= 8.0 && (
@@ -2616,8 +2616,8 @@ export default function App() {
                               </div>
                               <div className="flex items-baseline gap-2 flex-wrap">
                                 <span className="text-3xl font-mono text-emerald-400 font-extrabold">{dscrCashOnCashCalc.data.toFixed(2)}%</span>
-                                <span className="text-[10px] font-mono text-stone-500 mr-2">(NOI - Debt Service) / Cash Equity</span>
-                                <span className="text-[11px] font-mono tracking-wider text-stone-500 font-normal ml-auto select-none">(Target market expectation is 8.0% or higher)</span>
+                                <span className="text-xs font-semibold tracking-wider font-mono text-stone-500 mr-2">(NOI - Debt Service) / Cash Equity</span>
+                                <span className="text-xs font-semibold font-mono tracking-wider text-stone-500 font-normal ml-auto select-none">(Target market expectation is 8.0% or higher)</span>
                               </div>
                               <p className="text-xs text-stone-400 font-serif italic">
                                 {dscrCashOnCashCalc.data >= 8.0 
@@ -2627,7 +2627,7 @@ export default function App() {
 
                               {/* PERSISTENT HELPER EXPLANATION */}
                               <div className="border-t border-stone-900 pt-2.5">
-                                <p className="text-[11px] text-stone-400 font-serif italic leading-relaxed">
+                                <p className="text-xs font-semibold text-stone-400 font-serif italic leading-relaxed">
                                   *"Your actual annualized cash return relative to the down payment equity you physically invest out-of-pocket."*
                                 </p>
                               </div>
@@ -2639,7 +2639,7 @@ export default function App() {
                             <button
                               id="dscr-stress-toggle-btn"
                               onClick={() => setStressTestingActive(!stressTestingActive)}
-                              className={`w-full py-3.5 px-6 font-mono text-[10px] uppercase tracking-[0.2em] rounded-xl transition-all duration-300 flex items-center justify-between cursor-pointer focus:outline-none select-none ${
+                              className={`w-full py-3.5 px-6 font-mono text-xs font-semibold tracking-wider uppercase tracking-[0.2em] rounded-xl transition-all duration-300 flex items-center justify-between cursor-pointer focus:outline-none select-none ${
                                 stressTestingActive
                                   ? 'bg-[#F9F6F0] text-[#121212]'
                                   : 'bg-[#131313]/35 text-stone-400 hover:bg-[#161616]/45 hover:text-[#F9F6F0]'
@@ -2673,15 +2673,15 @@ export default function App() {
                                     </div>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                       <div className="space-y-1">
-                                        <div className="text-stone-500 text-[10px]">MACRO SHOCK PENALTY</div>
+                                        <div className="text-stone-500 text-xs font-semibold tracking-wider">MACRO SHOCK PENALTY</div>
                                         <div className="text-[#F9F6F0] font-bold text-sm">+7.5% EGI Direct Slasher</div>
                                       </div>
                                       <div className="space-y-1">
-                                        <div className="text-stone-500 text-[10px]">STRESSED VACANCY TARGET</div>
+                                        <div className="text-stone-500 text-xs font-semibold tracking-wider">STRESSED VACANCY TARGET</div>
                                         <div className="text-[#F9F6F0] font-bold text-sm">{(dscrVacancyRate + 7.5).toFixed(1)}% Stressed rate</div>
                                       </div>
                                     </div>
-                                    <p className="text-[10px] text-stone-500 font-sans leading-relaxed">
+                                    <p className="text-xs font-semibold tracking-wider text-stone-500 font-sans leading-relaxed">
                                       This dynamic simulation injects a 7.50% revenue impairment block directly over gross operations. This simulates severe vacancy spikes or tenant defaults within the {activeHub.cityName} hub.
                                     </p>
                                   </div>
@@ -2743,7 +2743,7 @@ export default function App() {
                                     </div>
                                   </div>
 
-                                  <p className="text-[11px] text-stone-550 font-serif italic leading-relaxed pt-1.5 border-t border-stone-850/40 font-light">
+                                  <p className="text-xs font-semibold text-stone-550 font-serif italic leading-relaxed pt-1.5 border-t border-stone-850/40 font-light">
                                     Under vacancy pressure (adding 7.5% vacancy penalty to operations), the Net Operating Income shifts from {formatCur(data.netOperatingIncome)} to {formatCur(dscrStressCalc.data.netOperatingIncome)}, compressing debt servicing flexibility from {data.isDebtFree ? "N/A" : `${data.dscr.toFixed(2)}x`} to {dscrStressCalc.data.isDebtFree ? "N/A" : `${dscrStressCalc.data.dscr.toFixed(2)}x`}.
                                   </p>
                                 </div>             </div>
@@ -2752,7 +2752,7 @@ export default function App() {
                           </div>
 
                           {/* SECONDARY COMMANDS PANEL */}
-                          <div className="pt-4.5 border-t border-stone-900/40 flex flex-wrap items-center justify-between gap-3 text-[10px] font-mono select-none">
+                          <div className="pt-4.5 border-t border-stone-900/40 flex flex-wrap items-center justify-between gap-3 text-xs font-semibold tracking-wider font-mono select-none">
                             <span className="text-stone-500 uppercase tracking-widest font-bold">Actions</span>
                             <div className="flex flex-wrap items-center gap-4">
                               <button
@@ -2843,7 +2843,7 @@ export default function App() {
                     {/* Initial NOI */}
                     <div className="group/field">
                       <div className="flex justify-between items-center mb-1">
-                        <label className="text-xs font-sans font-light text-stone-400/80 tracking-wide">Initial NOI</label>
+                        <label className="text-sm font-semibold font-sans font-light text-stone-400/80 tracking-wide">Initial NOI</label>
                         <span className="text-xs font-mono text-[#F9F6F0] font-semibold">{formatCur(capInitialNoi)}</span>
                       </div>
                       <input
@@ -2870,7 +2870,7 @@ export default function App() {
                     {/* Going-in Cap Rate */}
                     <div className="group/field">
                       <div className="flex justify-between items-center mb-1">
-                        <label className="text-xs font-sans font-light text-stone-400/80 tracking-wide">Entry Cap Rate</label>
+                        <label className="text-sm font-semibold font-sans font-light text-stone-400/80 tracking-wide">Entry Cap Rate</label>
                         <span className="text-xs font-mono text-[#F9F6F0] font-semibold">{formatPct(capGoingInRate)}</span>
                       </div>
                       <input
@@ -2894,7 +2894,7 @@ export default function App() {
                         />
                       </div>
                       {(capGoingInRate < 3.0 || capGoingInRate > 12.0) && (
-                        <div id="cap-precision-warning" className="mt-1.5 bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] p-2 rounded-lg font-mono flex items-start gap-1.5 leading-relaxed">
+                        <div id="cap-precision-warning" className="mt-1.5 bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-semibold tracking-wider p-2 rounded-lg font-mono flex items-start gap-1.5 leading-relaxed">
                           <ShieldAlert size={14} className="shrink-0 mt-0.5 text-amber-500 animate-pulse" />
                           <span>
                             <strong>Precision Warning:</strong> Entry cap of {formatPct(capGoingInRate)} is outside typical stabilized institutional bands (3.0% - 12.0%). {capGoingInRate < 3.0 ? "Sub-3% represents premium trophy assets with minimal cash yield." : "Above 12% indicates high risk premium or distressed operations."}
@@ -2906,7 +2906,7 @@ export default function App() {
                     {/* Annual Escalation */}
                     <div className="group/field">
                       <div className="flex justify-between items-center mb-1">
-                        <label className="text-xs font-sans font-light text-stone-400/80 tracking-wide">Annual Growth</label>
+                        <label className="text-sm font-semibold font-sans font-light text-stone-400/80 tracking-wide">Annual Growth</label>
                         <span className="text-xs font-mono text-[#F9F6F0] font-semibold">{formatPct(capNoiGrowth)}</span>
                       </div>
                       <input
@@ -2934,7 +2934,7 @@ export default function App() {
                     {/* Yield decay expansion */}
                     <div className="group/field">
                       <div className="flex justify-between items-center mb-1">
-                        <label className="text-xs font-sans font-light text-stone-400/80 tracking-wide">Annual Shift (Bps)</label>
+                        <label className="text-sm font-semibold font-sans font-light text-stone-400/80 tracking-wide">Annual Shift (Bps)</label>
                         <span className="text-xs font-mono text-amber-500 font-semibold">{capExpansionBps > 0 ? `+${capExpansionBps}` : capExpansionBps} bps</span>
                       </div>
                       <input
@@ -2961,7 +2961,7 @@ export default function App() {
 
                   {/* Purchase price override */}
                   <div className="pt-4">
-                    <label className="text-xs font-sans font-light text-stone-400/80 block mb-1">Override Initial Purchase Cost (Optional)</label>
+                    <label className="text-sm font-semibold font-sans font-light text-stone-400/80 block mb-1">Override Initial Purchase Cost (Optional)</label>
                     <input 
                       type="number"
                       id="cap-purchase-override"
@@ -3000,11 +3000,11 @@ export default function App() {
                             
                             <div className="grid grid-[#F9F6F0] grid-cols-2 gap-4">
                               <div className="border-r border-stone-200/60 pr-2">
-                                <span className="text-[10px] font-mono text-[#555555]">INITIAL VALUE</span>
+                                <span className="text-xs font-semibold tracking-wider font-mono text-[#555555]">INITIAL VALUE</span>
                                 <h4 className="text-lg font-mono font-bold text-stone-900">{formatCur(ans.purchasePrice)}</h4>
                               </div>
                               <div>
-                                <span className="text-[10px] font-mono text-[#555555]">PROYECTED TERMINAL VALUE</span>
+                                <span className="text-xs font-semibold tracking-wider font-mono text-[#555555]">PROYECTED TERMINAL VALUE</span>
                                 <h4 className="text-lg font-mono font-bold text-stone-900">{formatCur(ans.terminalValuation)}</h4>
                               </div>
                             </div>
@@ -3030,7 +3030,7 @@ export default function App() {
                             {challengeActive && !challengeSuccess && capRecoveryStrategy && (
                               <div className="mt-4 pt-4 border-t border-rose-300/40 space-y-3">
                                 <div className="flex items-center justify-between">
-                                  <span className="text-[10px] font-mono font-bold tracking-wider text-rose-800 uppercase flex items-center gap-1.5 select-none font-bold">
+                                  <span className="text-xs font-semibold tracking-wider font-mono font-bold tracking-wider text-rose-800 uppercase flex items-center gap-1.5 select-none font-bold">
                                     <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
                                     Tactical Recovery Option
                                   </span>
@@ -3068,12 +3068,12 @@ export default function App() {
                           </div>
 
                           {/* Year 10 detailed summary log */}
-                          <div className="bg-stone-950 border border-stone-850 rounded-xl p-4 space-y-3 font-mono text-[11px] overflow-x-auto text-stone-400">
-                            <span className="text-[10px] text-stone-500 uppercase tracking-widest">ANNUALIZED TRENDING SCHEDULE</span>
+                          <div className="bg-stone-950 border border-stone-850 rounded-xl p-4 space-y-3 font-mono text-xs font-semibold overflow-x-auto text-stone-400">
+                            <span className="text-xs font-semibold tracking-wider text-stone-500 uppercase tracking-widest">ANNUALIZED TRENDING SCHEDULE</span>
                             
                             <table className="w-full text-left font-mono">
                               <thead>
-                                <tr className="border-b border-stone-850 text-stone-500 text-[10px]">
+                                <tr className="border-b border-stone-850 text-stone-500 text-xs font-semibold tracking-wider">
                                   <th className="pb-1.5">YEAR</th>
                                   <th className="pb-1.5 text-right">NOI</th>
                                   <th className="pb-1.5 text-right">CAP RATE</th>
@@ -3098,7 +3098,7 @@ export default function App() {
                           </div>
 
                           {/* SECONDARY COMMANDS PANEL */}
-                          <div className="pt-4.5 border-t border-stone-900/40 flex flex-wrap items-center justify-between gap-3 text-[10px] font-mono select-none">
+                          <div className="pt-4.5 border-t border-stone-900/40 flex flex-wrap items-center justify-between gap-3 text-xs font-semibold tracking-wider font-mono select-none">
                             <span className="text-stone-500 uppercase tracking-widest font-bold">Actions</span>
                             <div className="flex flex-wrap items-center gap-4">
                               <button
@@ -3172,7 +3172,7 @@ export default function App() {
                     {/* Monthly Contract Value (MRR) */}
                     <div className="group/field">
                       <div className="flex justify-between items-center mb-1">
-                        <label className="text-xs font-sans font-light text-stone-400/80 tracking-wide">Monthly Contract Value (MRR)</label>
+                        <label className="text-sm font-semibold font-sans font-light text-stone-400/80 tracking-wide">Monthly Contract Value (MRR)</label>
                         <span className="text-xs font-mono text-[#F9F6F0] font-semibold">{formatCur(saasMrr)} /mo</span>
                       </div>
                       <input
@@ -3199,7 +3199,7 @@ export default function App() {
                     {/* Gross Margin */}
                     <div className="group/field">
                       <div className="flex justify-between items-center mb-1">
-                        <label className="text-xs font-sans font-light text-stone-400/80 tracking-wide">Service Gross Margin (%)</label>
+                        <label className="text-sm font-semibold font-sans font-light text-stone-400/80 tracking-wide">Service Gross Margin (%)</label>
                         <span className="text-xs font-mono text-[#F9F6F0] font-semibold">{saasMargin}%</span>
                       </div>
                       <input
@@ -3226,7 +3226,7 @@ export default function App() {
                     {/* Monthly Churn Rate */}
                     <div className="group/field">
                       <div className="flex justify-between items-center mb-1">
-                        <label className="text-xs font-sans font-light text-stone-400/80 tracking-wide">Monthly Customer Churn (%)</label>
+                        <label className="text-sm font-semibold font-sans font-light text-stone-400/80 tracking-wide">Monthly Customer Churn (%)</label>
                         <span className="text-xs font-mono text-amber-500 font-semibold">{saasChurn}%</span>
                       </div>
                       <input
@@ -3250,7 +3250,7 @@ export default function App() {
                         />
                       </div>
                       {saasChurn > 10.0 && (
-                        <div id="saas-churn-precision-warning" className="mt-1.5 bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] p-2 rounded-lg font-mono flex items-start gap-1.5 leading-relaxed">
+                        <div id="saas-churn-precision-warning" className="mt-1.5 bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-semibold tracking-wider p-2 rounded-lg font-mono flex items-start gap-1.5 leading-relaxed">
                           <ShieldAlert size={14} className="shrink-0 mt-0.5 text-amber-500 animate-pulse" />
                           <span>
                             <strong>Precision Warning:</strong> Monthly churn above 10% (equivalent to ~70% annual customer loss), severely threatens typical SaaS business model sustainability.
@@ -3262,7 +3262,7 @@ export default function App() {
                     {/* Customer Acquisition cost */}
                     <div className="group/field">
                       <div className="flex justify-between items-center mb-1">
-                        <label className="text-xs font-sans font-light text-stone-400/80 tracking-wide">Customer Acquisition Cost (CAC)</label>
+                        <label className="text-sm font-semibold font-sans font-light text-stone-400/80 tracking-wide">Customer Acquisition Cost (CAC)</label>
                         <span className="text-xs font-mono text-[#F9F6F0] font-semibold">{formatCur(saasCac)}</span>
                       </div>
                       <input
@@ -3323,7 +3323,7 @@ export default function App() {
                             <div className="flex justify-between items-start">
                               <div>
                                 <div className="flex items-center gap-2 select-none">
-                                  <span className="text-[10px] font-mono tracking-widest text-[#555] uppercase">LTV TO CAC RATIO</span>
+                                  <span className="text-xs font-semibold tracking-wider font-mono tracking-widest text-[#555] uppercase">LTV TO CAC RATIO</span>
                                   {challengeActive && activeTab === 'saas-metrics' && !challengeSuccess && (
                                     <span className="text-[8px] font-mono tracking-wider text-rose-600 bg-rose-100/60 px-2.5 py-0.5 rounded border border-rose-200 font-bold uppercase animate-pulse">
                                       ⚠️ COVENANT FAILING
@@ -3340,7 +3340,7 @@ export default function App() {
                                 </h3>
                               </div>
                               <div className="flex flex-col items-end gap-1.5 text-right select-none">
-                                <span className="text-[10px] font-mono tracking-widest bg-stone-900 text-[#F9F6F0] font-bold px-3 py-1.5 rounded-full">
+                                <span className="text-xs font-semibold tracking-wider font-mono tracking-widest bg-stone-900 text-[#F9F6F0] font-bold px-3 py-1.5 rounded-full">
                                   RATIO MATRIX
                                 </span>
                               </div>
@@ -3365,7 +3365,7 @@ export default function App() {
                             {challengeActive && !challengeSuccess && saasRecoveryStrategy && (
                               <div className="mt-4 pt-4 border-t border-rose-300/40 space-y-3">
                                 <div className="flex items-center justify-between">
-                                  <span className="text-[10px] font-mono font-bold tracking-wider text-rose-800 uppercase flex items-center gap-1.5 select-none font-bold">
+                                  <span className="text-xs font-semibold tracking-wider font-mono font-bold tracking-wider text-rose-800 uppercase flex items-center gap-1.5 select-none font-bold">
                                     <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
                                     Tactical Recovery Option
                                   </span>
@@ -3421,7 +3421,7 @@ export default function App() {
 
                           {/* RETENTION DECAY VISUAL TICKET */}
                           <div className="p-4 bg-stone-950 rounded-xl border border-stone-850 space-y-4">
-                            <span className="text-[10px] font-mono tracking-wider text-stone-500 uppercase block">RETENTION CURVE OVER 24 MONTHS</span>
+                            <span className="text-xs font-semibold tracking-wider font-mono tracking-wider text-stone-500 uppercase block">RETENTION CURVE OVER 24 MONTHS</span>
                             
                             <div className="h-10 bg-stone-900 rounded relative overflow-hidden flex items-end">
                               <svg className="w-full h-full absolute top-0 left-0" viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none">
@@ -3429,7 +3429,7 @@ export default function App() {
                               </svg>
                             </div>
 
-                            <div className="flex justify-between text-[10px] font-mono text-stone-500">
+                            <div className="flex justify-between text-xs font-semibold tracking-wider font-mono text-stone-500">
                               <span>Month 1 (100%)</span>
                               <span>Month 12 ({formatPct(Math.pow(1 - (saasChurn / 100), 12) * 100)})</span>
                               <span>Month 24 ({formatPct(Math.pow(1 - (saasChurn / 100), 24) * 100)})</span>
@@ -3441,7 +3441,7 @@ export default function App() {
                             <button
                               id="saas-stress-toggle-btn"
                               onClick={() => setStressTestingActive(!stressTestingActive)}
-                              className={`w-full py-3 px-5 font-mono text-[11px] uppercase tracking-widest rounded-xl transition-all duration-300 border flex items-center justify-between cursor-pointer focus:outline-none select-none ${
+                              className={`w-full py-3 px-5 font-mono text-xs font-semibold uppercase tracking-widest rounded-xl transition-all duration-300 border flex items-center justify-between cursor-pointer focus:outline-none select-none ${
                                 stressTestingActive
                                   ? 'bg-[#1C1C1C] text-rose-450 border-rose-500/30'
                                   : 'bg-stone-900/60 text-stone-400 border-stone-850 hover:text-stone-200 hover:border-stone-750'
@@ -3470,26 +3470,26 @@ export default function App() {
                                   {/* VOLATILITY CHURN SHOCK PARAMETERS */}
                                   <div className="bg-[#090909] border border-stone-855 rounded-xl p-4.5 space-y-3 font-mono text-xs text-[#EAEAEA]">
                                     <div className="flex justify-between items-center pb-2 border-b border-stone-900">
-                                      <span className="text-[10px] font-mono text-stone-500 uppercase tracking-widest font-bold">CHURN VOLATILITY SIMULATION ENVIRONMENT</span>
+                                      <span className="text-xs font-semibold tracking-wider font-mono text-stone-500 uppercase tracking-widest font-bold">CHURN VOLATILITY SIMULATION ENVIRONMENT</span>
                                       <span className="text-[9px] text-rose-400 bg-rose-950/40 border border-rose-500/25 px-2 py-0.5 rounded uppercase font-bold">[ ACTIVE HEADWIND ]</span>
                                     </div>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                       <div className="space-y-1">
-                                        <div className="text-stone-500 text-[10px]">CHURN MULTIPLIER SCALING</div>
+                                        <div className="text-stone-500 text-xs font-semibold tracking-wider">CHURN MULTIPLIER SCALING</div>
                                         <div className="text-[#F9F6F0] font-bold text-sm">1.5x Leverage Shock Factor</div>
                                       </div>
                                       <div className="space-y-1">
-                                        <div className="text-stone-500 text-[10px]">STRESSED ATTRIBUTION RATE</div>
+                                        <div className="text-stone-500 text-xs font-semibold tracking-wider">STRESSED ATTRIBUTION RATE</div>
                                         <div className="text-[#F9F6F0] font-bold text-sm">{(saasChurn * 1.5).toFixed(1)}% Stressed monthly rate</div>
                                       </div>
                                     </div>
-                                    <p className="text-[10px] text-stone-500 font-sans leading-relaxed">
+                                    <p className="text-xs font-semibold tracking-wider text-stone-500 font-sans leading-relaxed">
                                       In response to sudden competitive market entrants or macro cycles, this stress test scales standard monthly subscriber attrition by a severe 1.50x factor.
                                     </p>
                                   </div>
 
                                   <div className="flex justify-between items-center pb-1.5 border-b border-stone-900">
-                                    <span className="text-[10px] font-mono text-stone-400 tracking-wider">COMPREHENSIVE SENSITIVITY SPLIT</span>
+                                    <span className="text-xs font-semibold tracking-wider font-mono text-stone-400 tracking-wider">COMPREHENSIVE SENSITIVITY SPLIT</span>
                                     <span className="text-[9px] font-mono text-rose-450 bg-rose-500/10 px-2 py-0.5 rounded font-semibold uppercase">Under Stress</span>
                                   </div>
 
@@ -3547,7 +3547,7 @@ export default function App() {
                                     </div>
                                   </div>
 
-                                  <p className="text-[11px] text-stone-400 font-serif italic leading-relaxed pt-1.5 border-t border-stone-900">
+                                  <p className="text-xs font-semibold text-stone-400 font-serif italic leading-relaxed pt-1.5 border-t border-stone-900">
                                     Multiplying subscriber churn by 1.5x (from {saasChurn}% to {(saasChurn * 1.5).toFixed(1)}%) compresses contract lifetime from {res.customerLifetimeMonths.toFixed(1)} months to {saasStressCalc.data.customerLifetimeMonths.toFixed(1)} months, degrading capital-recovery speeds.
                                   </p>
                                 </div>
@@ -3556,7 +3556,7 @@ export default function App() {
                           </div>
 
                           {/* SECONDARY COMMANDS PANEL */}
-                          <div className="pt-4.5 border-t border-stone-900/40 flex flex-wrap items-center justify-between gap-3 text-[10px] font-mono select-none">
+                          <div className="pt-4.5 border-t border-stone-900/40 flex flex-wrap items-center justify-between gap-3 text-xs font-semibold tracking-wider font-mono select-none">
                             <span className="text-stone-500 uppercase tracking-widest font-bold">Actions</span>
                             <div className="flex flex-wrap items-center gap-4">
                               <button
@@ -3626,7 +3626,7 @@ export default function App() {
                   </div>
                   
                   {/* Clean stats panel */}
-                  <div className="flex items-center gap-6 text-[10px] font-mono tracking-wider text-stone-400 uppercase bg-stone-900/35 border border-stone-850 p-4 rounded-xl">
+                  <div className="flex items-center gap-6 text-xs font-semibold tracking-wider font-mono tracking-wider text-stone-400 uppercase bg-stone-900/35 border border-stone-850 p-4 rounded-xl">
                     <div className="text-center">
                       <div className="text-xl font-bold font-serif text-[#F9F6F0] leading-none mb-1">
                         {savedDeals.length}
@@ -3680,7 +3680,7 @@ export default function App() {
                     <button
                       key={filter}
                       onClick={() => setLibraryFilter(filter)}
-                      className={`px-3 py-1.5 text-[10px] uppercase font-bold tracking-wider rounded transition cursor-pointer select-none ${
+                      className={`px-3 py-1.5 text-xs font-semibold tracking-wider uppercase font-bold tracking-wider rounded transition cursor-pointer select-none ${
                         libraryFilter === filter
                           ? 'bg-[#F9F6F0] text-stone-950 font-black'
                           : 'bg-transparent text-stone-400 hover:text-stone-200 border border-stone-850'
@@ -3715,7 +3715,7 @@ export default function App() {
                   {!searchQuery && (
                     <button
                       onClick={() => setActiveTab('debt-coverage')}
-                      className="px-4 py-2 bg-stone-900 border border-stone-750 text-stone-300 font-mono text-[10px] uppercase font-bold tracking-widest rounded-lg hover:border-stone-600 transition cursor-pointer"
+                      className="px-4 py-2 bg-stone-900 border border-stone-750 text-stone-300 font-mono text-xs font-semibold tracking-wider uppercase font-bold tracking-widest rounded-lg hover:border-stone-600 transition cursor-pointer"
                     >
                       Go to Underwriting Dashboard
                     </button>
@@ -3767,7 +3767,7 @@ export default function App() {
                           </div>
 
                           {/* Quick snapshot metrics data breakdown */}
-                          <div className="bg-stone-950/50 p-3 rounded-lg border border-stone-905 space-y-2 text-[10px] font-mono leading-none">
+                          <div className="bg-stone-950/50 p-3 rounded-lg border border-stone-905 space-y-2 text-xs font-semibold tracking-wider font-mono leading-none">
                             <div className="flex justify-between items-center text-stone-505">
                               <span>Key Metric Score:</span>
                               <span className="text-[#F9F6F0] font-bold font-serif text-xs">{deal.formattedMetric}</span>
@@ -3862,7 +3862,7 @@ export default function App() {
                 </div>
 
                 <div className="space-y-2 text-left">
-                  <label className="text-[10px] font-mono text-stone-500 uppercase tracking-widest block font-bold">
+                  <label className="text-sm font-semibold tracking-wider font-mono text-stone-500 uppercase tracking-widest block font-bold">
                     Project Name / Scenario Label
                   </label>
                   <input
@@ -3875,7 +3875,7 @@ export default function App() {
                   />
                 </div>
 
-                <div className="bg-stone-950 p-4 rounded-xl border border-stone-900 space-y-2 text-[10px] font-mono text-stone-500 text-left">
+                <div className="bg-stone-950 p-4 rounded-xl border border-stone-900 space-y-2 text-xs font-semibold tracking-wider font-mono text-stone-500 text-left">
                   <div className="flex justify-between">
                     <span>Model Category:</span>
                     <span className="text-[#F9F6F0] font-bold">
@@ -3894,7 +3894,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="flex gap-3 justify-end pt-2 text-[10px] font-mono uppercase tracking-widest">
+                <div className="flex gap-3 justify-end pt-2 text-xs font-semibold tracking-wider font-mono uppercase tracking-widest">
                   <button
                     type="button"
                     onClick={() => setSaveModalOpen(false)}
@@ -3978,7 +3978,7 @@ export default function App() {
                   <div className="pt-0 space-y-4">
                     <span className="text-[9px] font-mono tracking-[0.2em] text-stone-500 uppercase block font-semibold">1. SEO ROUTING &amp; INDEXING SIMULATION</span>
                     <div className="space-y-1.5 font-sans">
-                      <div className="text-[10px] font-mono text-stone-500 truncate flex items-center gap-1 text-left">
+                      <div className="text-xs font-semibold tracking-wider font-mono text-stone-500 truncate flex items-center gap-1 text-left">
                         <span>https://underwrite.institutional</span>
                         <span>›</span>
                         <span className="text-stone-400">market</span>
@@ -3992,7 +3992,7 @@ export default function App() {
                       >
                         {activeSEO.title}
                       </a>
-                      <p className="text-[11px] text-stone-400 leading-relaxed text-left">
+                      <p className="text-xs font-semibold text-stone-400 leading-relaxed text-left">
                         {activeSEO.metaDescription}
                       </p>
                     </div>
@@ -4004,12 +4004,12 @@ export default function App() {
                     <p className="text-xs text-stone-400 leading-relaxed font-sans">
                       Calculations are validated utilizing high-fidelity arithmetic offsets to assure absolute system consistency across Node.js runtime layers.
                     </p>
-                    <div className="p-4 rounded-xl bg-stone-900/60 text-[10px] space-y-1.5 font-mono text-stone-400 overflow-x-auto text-left">
+                    <div className="p-4 rounded-xl bg-stone-900/60 text-xs font-semibold tracking-wider space-y-1.5 font-mono text-stone-400 overflow-x-auto text-left">
                       <span className="text-[#F9F6F0] font-semibold">// Precision Multiplier Alignment</span>
                       <pre className="text-[9px]">const factor = Math.pow(10, decimals);</pre>
                       <pre className="text-[9px]">Math.round((value + EPSILON) * factor) / factor</pre>
                     </div>
-                    <div className="flex items-center gap-2 text-[10px] font-mono text-stone-500 pt-1">
+                    <div className="flex items-center gap-2 text-xs font-semibold tracking-wider font-mono text-stone-500 pt-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
                       Verified calculations against IEEE 754 float precision standards
                     </div>
@@ -4020,7 +4020,7 @@ export default function App() {
                     <span className="text-[9px] font-mono tracking-[0.2em] text-stone-500 uppercase block font-semibold">3. FORMULIZATION ANATOMY &amp; GENERAL CONVENTIONS</span>
                     <div className="text-xs text-stone-400 font-serif space-y-3">
                       <p className="font-serif">The standard Debt Service Coverage ratio (DSCR) calculation follows standard real estate banking conventions:</p>
-                      <div className="bg-stone-900/60 p-4 rounded-xl font-mono text-[10px] text-[#F9F6F0] flex justify-center py-4">
+                      <div className="bg-stone-900/60 p-4 rounded-xl font-mono text-xs font-semibold tracking-wider text-[#F9F6F0] flex justify-center py-4">
                         DSCR = NOI / Annual Debt Service
                       </div>
                       <p className="font-serif pt-1.5">For SaaS Underwriting, customer lifetime value and acquisition efficiency are computed as follows:</p>
@@ -4094,7 +4094,7 @@ export default function App() {
             <p className="font-serif italic text-stone-400">"Simplifying the architecture of cash flows through absolute precision."</p>
             <p className="font-mono text-[9px] uppercase tracking-widest text-stone-600 mt-2">COMMERCIAL FINANCE ENGINE WORKSPACE</p>
           </div>
-          <div className="text-left md:text-right font-mono text-[10px] space-y-1">
+          <div className="text-left md:text-right font-mono text-xs font-semibold tracking-wider space-y-1">
             <p className="text-stone-400">Pure client-side mathematical projection workstation.</p>
             <p className="text-stone-500">Guaranteed IEEE 754 float aligners inside JavaScript environments.</p>
             <p className="text-stone-600">No telemetry log tracking. Built for strict privacy and secure operations.</p>
@@ -4137,7 +4137,7 @@ export default function App() {
             />
             
             {/* Print Control bar - Hidden on print */}
-            <div className="p-3 bg-stone-900/60 border border-stone-800 rounded-xl flex flex-wrap justify-between items-center gap-3 mb-10 text-stone-400 font-mono text-[10px] uppercase tracking-wider print:hidden select-none relative z-10">
+            <div className="p-3 bg-stone-900/60 border border-stone-800 rounded-xl flex flex-wrap justify-between items-center gap-3 mb-10 text-stone-400 font-mono text-xs font-semibold tracking-wider uppercase tracking-wider print:hidden select-none relative z-10">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span className="font-semibold text-stone-300">Institutional Dossier Memo Ready for Export</span>
@@ -4178,7 +4178,7 @@ export default function App() {
               </div>
 
               {/* Corporate Header Info Block */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 bg-stone-950/40 border border-stone-850 p-6 rounded-xl text-[11px] font-mono mb-8">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 bg-stone-950/40 border border-stone-850 p-6 rounded-xl text-xs font-semibold font-mono mb-8">
                 <div>
                   <span className="text-stone-500 block uppercase text-[9px] tracking-widest font-bold mb-1">COMMITTEE DATE</span>
                   <span className="font-bold text-stone-250">{new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
@@ -4278,7 +4278,7 @@ export default function App() {
                             <td className="py-4 text-right text-emerald-400 font-bold">
                               {formatCur(dscrCalc.data.netOperatingIncome)}
                             </td>
-                            <td className="py-4 text-emerald-500 pl-8 font-mono text-[10px]">Primary underwritten yield index</td>
+                            <td className="py-4 text-emerald-500 pl-8 font-mono text-xs font-semibold tracking-wider">Primary underwritten yield index</td>
                           </tr>
                           <tr className="hover:bg-stone-950/20 transition duration-150">
                             <td className="py-4 text-stone-300">Contract Annual Debt Service Obligation</td>
@@ -4290,7 +4290,7 @@ export default function App() {
                             <td className="py-4 text-right text-amber-400">
                               {formatCur(Math.max(0, dscrCalc.data.netOperatingIncome - dscrAnnualDebtService))}
                             </td>
-                            <td className="py-4 text-amber-500 pl-8 font-mono text-[10px]">Retained liquidity above debit thresholds</td>
+                            <td className="py-4 text-amber-500 pl-8 font-mono text-xs font-semibold tracking-wider">Retained liquidity above debit thresholds</td>
                           </tr>
                         </tbody>
                       </table>
@@ -4466,7 +4466,7 @@ export default function App() {
                             <td className="py-4 text-right text-emerald-400 text-sm font-black">
                               {`${saasCalc.data.ltvToCacRatio.toFixed(2)}x`}
                             </td>
-                            <td className="py-4 text-emerald-500 pl-8 font-mono text-[10px]">Cushion margin above target benchmark risk metrics</td>
+                            <td className="py-4 text-emerald-500 pl-8 font-mono text-xs font-semibold tracking-wider">Cushion margin above target benchmark risk metrics</td>
                           </tr>
                         </tbody>
                       </table>
@@ -4489,7 +4489,7 @@ export default function App() {
               <div className="border-t border-stone-800 pt-8 mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 text-xs font-mono">
                 <div>
                   <span className="text-stone-500 block text-[9px] uppercase tracking-widest font-bold">MEMORANDUM SECURITY SEAL</span>
-                  <p className="text-stone-200 mt-1 uppercase text-[10px] font-bold">
+                  <p className="text-stone-200 mt-1 uppercase text-xs font-semibold tracking-wider font-bold">
                     CERTIFIED SECURE DIRECT BROWSER COMPILATION WORKSPACE
                   </p>
                   <p className="text-stone-500 text-[9px] mt-2 italic leading-relaxed">
@@ -4530,7 +4530,7 @@ export default function App() {
             </div>
 
             <div className="space-y-2">
-              <span className="text-[10px] font-mono tracking-[0.25em] text-emerald-400 uppercase font-black block">
+              <span className="text-xs font-semibold tracking-wider font-mono tracking-[0.25em] text-emerald-400 uppercase font-black block">
                 SECURITY CLEARED &amp; PROTOCOL VALIDATED
               </span>
               <h2 className="text-2xl font-serif font-light text-stone-100 tracking-tight">
@@ -4589,7 +4589,7 @@ export default function App() {
             </div>
             <div className="h-4 w-px bg-stone-800 mx-1" />
             <div>
-              <span className="text-[10px] font-mono tracking-widest text-[#9A9A9A] font-bold block uppercase">
+              <span className="text-xs font-semibold tracking-wider font-mono tracking-widest text-[#9A9A9A] font-bold block uppercase">
                 COMPILED AUDIT ENGINE
               </span>
               <h2 className="text-xs font-mono font-medium text-amber-500 tracking-tight">
@@ -4621,13 +4621,13 @@ export default function App() {
               <button
                 key={file}
                 onClick={() => setActiveDiagnosticFile(file)}
-                className={`py-3 px-5 border-r border-[#1D1D22] font-mono text-[11px] font-medium tracking-wide flex items-center gap-2 cursor-pointer transition-all duration-200 relative ${
+                className={`py-3 px-5 border-r border-[#1D1D22] font-mono text-xs font-semibold font-medium tracking-wide flex items-center gap-2 cursor-pointer transition-all duration-200 relative ${
                   isActive 
                     ? "bg-[#0F0F11] text-[#E0E0E0] border-b-2 border-b-amber-500 font-bold" 
                     : "bg-[#111114]/80 text-[#7C7C7C] hover:bg-[#131317] hover:text-[#B0B0B0]"
                 }`}
               >
-                <span className="text-amber-500 select-none text-[10px] font-mono">JS</span>
+                <span className="text-amber-500 select-none text-xs font-semibold tracking-wider font-mono">JS</span>
                 <span>{displayTitle}</span>
               </button>
             );
@@ -4636,7 +4636,7 @@ export default function App() {
 
         {/* Editor Controls & Dynamic Variables HUD */}
         <div className="flex items-center justify-between px-6 py-2.5 bg-[#141418] border-b border-[#1D1D22] select-none text-xs font-mono">
-          <div className="flex items-center gap-2 font-mono text-[10px] text-stone-500">
+          <div className="flex items-center gap-2 font-mono text-xs font-semibold tracking-wider text-stone-500">
             <span>Workspace:</span>
             <span className="text-[#A2A2A8]">@cre-finance/math-sandbox</span>
             <span className="px-1.5 py-0.5 rounded bg-emerald-950/40 text-emerald-400 font-bold tracking-tight text-[8px] uppercase border border-emerald-500/20">
@@ -4647,7 +4647,7 @@ export default function App() {
           <button
             type="button"
             onClick={handleCopyDiagnosticCode}
-            className="flex items-center gap-1.5 px-3 py-1 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/20 hover:border-amber-500/40 text-amber-500 text-[10px] font-semibold uppercase tracking-widest rounded-md transition-all duration-200 cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/20 hover:border-amber-500/40 text-amber-500 text-base font-semibold min-h-[44px] font-semibold tracking-wider font-semibold uppercase tracking-widest rounded-md transition-all duration-200 cursor-pointer"
           >
             {copiedDiagnostic ? (
               <>
@@ -4671,7 +4671,7 @@ export default function App() {
         </div>
 
         {/* IDE Footer Status Bar Area */}
-        <div className="bg-[#141418] px-6 py-2.5 border-t border-[#1D1D22]/60 select-none flex items-center justify-between text-[10px] text-[#707075] font-mono">
+        <div className="bg-[#141418] px-6 py-2.5 border-t border-[#1D1D22]/60 select-none flex items-center justify-between text-xs font-semibold tracking-wider text-[#707075] font-mono">
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
